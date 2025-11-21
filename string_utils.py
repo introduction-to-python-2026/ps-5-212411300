@@ -1,7 +1,5 @@
 
-
-
-def split_before_each_uppercases(formula):
+def split_before_uppercases(formula):
      start = 0
      end = 1
      split_formula = []
@@ -18,7 +16,7 @@ def split_before_each_uppercases(formula):
       
      return split_formula
 
-def split_at_first_digit(formula):
+def split_at_digit(formula):
     digit_index = -1
     for i, char in enumerate(formula):
         if char.isdigit():
@@ -35,15 +33,11 @@ def count_atoms_in_molecule(molecular_formula):
     """Takes a molecular formula (string) and returns a dictionary of atom counts.  
     Example: 'H2O' → {'H': 2, 'O': 1}"""
 
-    # Step 1: Initialize an empty dictionary to store atom counts
-
-    for atom in split_by_capitals(molecular_formula):
-        atom_name, atom_count = split_at_number(atom)
-        
-        # Step 2: Update the dictionary with the atom name and count
-
-    # Step 3: Return the completed dictionary
-
+   atom_count_dict = {} 
+   for atom in split_before_upper_cases(molecular_formula):
+       atom_name, atom_count = split_at_digit(atom)
+       atom_count_dict[atom_name] = atom_count_dict.get(atom_name , 0) + atom_count
+   return atom_count_dict  # Step 3: Return the completed dictionary
 
 
 def parse_chemical_reaction(reaction_equation):

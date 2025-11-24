@@ -35,7 +35,7 @@ def count_atoms_in_molecule(molecular_formula):
     for atom in split_before_upper_cases(molecular_formula):
         atom_name, atom_count = split_at_digit(atom)
         atom_count_dict[atom_name] = atom_count_dict.get(atom_name , 0) + atom_count
-        return atom_count_dict  # Step 3: Return the completed dictionary
+    return atom_count_dict  # Step 3: Return the completed dictionary
 
 
 def parse_chemical_reaction(reaction_equation):
